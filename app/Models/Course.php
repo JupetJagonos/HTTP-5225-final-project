@@ -10,6 +10,15 @@ class Course extends Model
 {
     /** @use HasFactory<\Database\Factories\CoursesFactory> */
     use HasFactory;
+
+    public function faculty() {
+       return $this -> belongsTo(Faculty::class);
+    }
+
+    public function students() {
+        return $this -> belongsToMany(Student::class);
+    }
+
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('lname')->nullable();
             $table->string('email')->unique();
             $table->softDeletes();
-            $table->timestamps();
+            $table->timestamps();            
         });
     }
 

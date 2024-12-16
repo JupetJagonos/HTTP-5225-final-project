@@ -9,16 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
-{
-    Schema::create('courses', function (Blueprint $table) {
-        $table->id(); // Primary key
-        $table->string('course_name'); // Name of the course
-        $table->string('course_index')->unique(); // Unique index for the course, e.g., HTTP5110
-        $table->text('course_description')->nullable(); // Optional description for the course
-        $table->timestamps(); // Created at and updated at timestamps
-    });
-}
+    public function up(): void
+    {
+        Schema::create('courses', function (Blueprint $table) {
+            $table->id(); 
+            $table->string('course_name'); 
+            $table->string('course_index')->unique(); 
+            $table->text('course_description')->nullable(); 
+            $table->unsignedBigInteger('faculty_id');
+            $table->timestamps(); 
+        });
+    }
 
     /**
      * Reverse the migrations.

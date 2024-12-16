@@ -21,6 +21,44 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        Student::factory(100) ->create();
+        Faculty::factory()->create([
+            'name' => 'Gary Bhanot'
+        ]);
+
+        Faculty::factory()->create([
+            'name' => 'Sean Doyle'
+        ]);
+
+        Faculty::factory()->create([
+            'name' => 'Adam Thomas'
+        ]);
+
+
+        Student::factory(100)->create();
+        Course::factory(20)->create();
+        Faculty::factory(5)->create();
     }
 }
+
+//         Student::factory(100) ->create();
+
+
+//         Courses::factory() -> create([
+//             'course_name' => 'Mohammeed',
+//             'course_index' => 'first course',
+//             'course_description' = 'Php class',
+//             'faculty_id' => '1'
+//         ]);
+
+//         Faculty::factory() -> create{[
+//             'name' => 'Gary Bhanot'
+//         ]};
+//         Faculty::factory() -> create{[
+//             'name' => 'Adam Thomas'
+//         ]}; Faculty::factory() -> create{[
+//             'name' => 'Sean Doyle'
+//         ]};
+//     }
+// }
+
+
